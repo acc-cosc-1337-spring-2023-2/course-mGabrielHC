@@ -18,8 +18,8 @@ int main()
 	cin>>year;
 
 	auto result = get_generation(year);
-
 	cout<<result<<"\n";
+	
 	
 	return 0;
 }

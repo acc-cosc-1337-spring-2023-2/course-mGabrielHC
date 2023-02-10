@@ -13,25 +13,24 @@ using std::string;
 string menu(int num)
 {
     string option;
+
     switch(num)
     {
-        case 1;
+        case 1:
             option = "Option 1";
             break;
-
-        case 2;
+        case 2:
             option = "Option 2";
             break;
-
-        case 3;
+        case 3:
             option = "Option 3";
             break;
-
-        case 4;
-            option = "option 4";
+        case 4:
+            option = "Option 4";
             break;
+
         default://works like the else statement in the if else
-            opetion = "Invalid Option"
+            option = "Invalid Option";
     }
 
 

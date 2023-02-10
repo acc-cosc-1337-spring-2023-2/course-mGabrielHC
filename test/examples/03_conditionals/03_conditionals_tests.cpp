@@ -8,6 +8,7 @@ TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
 
+
 TEST_CASE("Test anded results", "and truth table")
 {
 	REQUIRE(get_anded_result(true,  true) == true);
@@ -56,7 +57,7 @@ TEST_CASE("Test get generation")
 	REQUIRE(get_generation(1970) == "Generation X");
 	REQUIRE(get_generation(1950) == "Baby boomer");
 	REQUIRE(get_generation(1930) == "Silent Generation");
-	REQUIRE(get_generation(1900) == "Invalid year");
+	REQUIRE(get_generation(1900) == "Invalid Year");
 }
 
 

@@ -11,7 +11,7 @@ bool get_ored_result(bool b1, bool b2)
     return b1 || b2; 
 }
 
-bool get_notted_result(bool b1, bool b2)
+bool get_notted_result(bool b1)
 {
     return !b1; 
 }

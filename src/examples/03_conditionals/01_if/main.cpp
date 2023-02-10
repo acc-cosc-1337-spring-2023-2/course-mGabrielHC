@@ -10,11 +10,15 @@ int main()
 	cout<<"Enter hours: ";
 	cin>>hours;
 
-	cauto overtime = is_overtime(hours);
+	auto overtime = is_overtime(hours);
 
 	if(overtime == true)
 	{
 		cout<<"Overtime\n";
+	}
+	else
+	{
+		cout<<"Not overtime\n";
 	}
 
 	auto even = false;

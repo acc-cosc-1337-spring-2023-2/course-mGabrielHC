@@ -3,6 +3,8 @@
 #include "expressions.h"
 #include "constants.h"
 #include "casting.h"
+#include "if.h"
+
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
