@@ -6,18 +6,12 @@ using std::cin; using std::cout;
 
 int main() 
 {
-	auot choice = 'n';
-	do
-	{
-		auto num = 0;
-		cout<<"Enter a number";
-		cint>>num;
+	auto num = 0;
+	cout<<"Enter a number";
+	cin>>num;
 
-		auto result = sum_of_squares(num);
-		cout<<"Sum of squares: " <<result<<"\n";
-	} while (/* condition */);
-	
-
+	auto result = sum_of_squares(num);
+	cout<<"Sum of squares: " <<result<<"\n";
 
 	string str = "Hello";
 	display(str);

@@ -7,8 +7,8 @@ using std::cout;
 //Example: sum_of_squares(4) 
 //1*1 + 2 * 2 + 3*3 + 4*4 = 30
 int sum_of_squares(int num)
-{   auto sum = 0;
-
+{   
+	auto sum = 0;
 
 	while(num > 0)
 	{
@@ -41,7 +41,7 @@ void display(std::string str)
 
     while(index < str.length())
 	{
-		cout<<str[index],<<"\n";
+		cout<<str[index]<<"\n";
 		index++;
 	}
 }
