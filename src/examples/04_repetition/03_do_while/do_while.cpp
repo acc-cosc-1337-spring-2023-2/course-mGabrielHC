@@ -13,9 +13,11 @@ void prompt_user()
     {
         cout<<"Continue, enter y..";
         cin>>choice;
-    } while (choice == 'y' || choice == 'Y');
+    } 
+    while (choice == 'y' || choice == 'Y');
     
 }
+
 void display_menu()
 {
     cout<<"ACC do while menu\n";
@@ -24,9 +26,11 @@ void display_menu()
     cout<<"3-Payroll\n";
     cout<<"4_Exit\n";
 }
+
 void run_menu()
 {
     auto option = 0;
+    
     do
     {
         display_menu();

@@ -31,7 +31,7 @@ int sum_of_squares_for(int num)
     for(; num > 0; num--)
     {
         //sum += i * i;
-        sum == num * num;
+        sum += num * num;
     }
     return sum;
 }
