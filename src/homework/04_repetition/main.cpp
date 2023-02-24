@@ -26,12 +26,25 @@ int main()
 		{
 			auto num = 0;
 
-			cout<<"Enter a number: "<<"\n";
+			cout<<"Enter a number: ";
 			cin>>num;
 
 			num = factorial(num);
 			cout<<"The factorial of this number is: "<<num<<"\n";
 
+		}
+
+		else if(option == 2)
+		{
+			auto num1 = 0;
+			auto num2 = 0;
+
+			cout<<"Enter two integers: ";
+			cout<<"first integer: ", cin >> num1, cout<<"Second integer: ", cin >> num2;
+			cout<<"\n";
+
+			auto result = gcd(num1, num2);
+			cout<<"The greatest common divisor of both numbers is: "<<result<<"\n\n";
 		}
 		else if(option == 3)
 		{
