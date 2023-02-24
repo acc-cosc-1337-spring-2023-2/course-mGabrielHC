@@ -5,8 +5,14 @@ using std::cout; using std::string;
 
 int main()
 {
-   /* string lang = "C++";
+    string lang = "C++";
+    auto num = 5;
+
     cout<<lang<<"\n";
+    cout<<"Address of lang :" <<&lang<<"\n";
+    cout<<"Address of num :" <<&name<<"\n";
+    
+
     cout<<"size: "<<lang.size()<<"\n";
     cout<<"size: "<<lang.length()<<"\n";
     cout<<"Capacity: " <<lang.capacity()<<"\n\n";
@@ -19,7 +25,7 @@ int main()
     lang.append("r");
     cout<<lang<<"\n";
     cout<<"size: "<<lang.size()<<"\n";
-    cout<<"Capacity: " <<lang.capacity()<<"\n\n";*/
+    cout<<"Capacity: " <<lang.capacity()<<"\n\n";
 
     //create string
     string s0("Initial string");
