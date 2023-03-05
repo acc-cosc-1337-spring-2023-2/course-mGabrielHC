@@ -19,31 +19,6 @@ double get_gc_content(const string& dna)
     return gc_percent;
 }
 
-string get_dna_complement(string dna)
-{
-     for(char& CompString : dna)
-    {
-    switch(CompString)
-    {
-        case 'A':
-            CompString = 'T';
-            break;
-        case 'T':
-            CompString = 'A';
-            break;
-        case 'C':
-            CompString = 'G';
-            break;
-        case 'G':
-            CompString = 'C';
-            break;
-        default:
-            break;
-        }
-    }
-    return dna;
-}
-
 string get_reverse_string(string dna)
 {
     string reversed_string = "";
@@ -53,4 +28,33 @@ string get_reverse_string(string dna)
     }
     return reversed_string;
 }
+
+string get_dna_complement(string dna)
+{
+    string reversed_dna = get_reverse_string(dna);
+
+    for(char& dnaComp : reversed_dna)
+    {
+    switch(dnaComp)
+    {
+        case 'A':
+            dnaComp = 'T';
+            break;
+        case 'T':
+            dnaComp = 'A';
+            break;
+        case 'C':
+            dnaComp = 'G';
+            break;
+        case 'G':
+            dnaComp = 'C';
+            break;
+        default:
+            break;
+        }
+    }
+    return reversed_dna;
+}
+
+
 

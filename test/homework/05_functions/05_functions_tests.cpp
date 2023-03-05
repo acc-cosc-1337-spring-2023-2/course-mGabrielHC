@@ -14,8 +14,8 @@ TEST_CASE("Verify get gc content")
 
 TEST_CASE("Verify dna complement")
 {
-	//REQUIRE(get_dna_complement("AAAACCCGGT") == "ACCGGGTTTT");
-	//REQUIRE(get_dna_complement("CCCGGAAAAT") == "ATTTTCCGGG");
+	REQUIRE(get_dna_complement("AAAACCCGGT") == "ACCGGGTTTT");
+	REQUIRE(get_dna_complement("CCCGGAAAAT") == "ATTTTCCGGG");
 }
 
 TEST_CASE("Verify reversed string")
