@@ -28,4 +28,4 @@ void show_balance(CheckingAccount &account)
     std::cout<<"Friends balance: "<<account.balance<<"\n";
 }
 
-std::ostream& operator<<(std::ostream& out, const CHeckingAccount)
+std::ostream& operator<<(std::ostream& out, const CheckingAccount);

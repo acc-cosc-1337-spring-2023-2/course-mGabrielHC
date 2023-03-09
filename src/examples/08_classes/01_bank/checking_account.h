@@ -10,7 +10,7 @@ class CheckingAccount
 {
 
 friend void show_balance(const CheckingAccount &account);
-friend std::ostream& operator()
+friend std::ostream& operator();
 
 public:
     CheckingAccount(){get_balance_from_db();}
