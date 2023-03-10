@@ -14,9 +14,16 @@ void display_menu()
     cout<<"4-Exit\n";
 }
 
-void run_menu(BankAccount &account)
+void run_menu(std::vector<BankAccount*> account)
 {
     auto option = 0;
+
+    auto choice = 0;
+
+    cout<<"Checking(1) or savings(2) ";
+    cin>>choice;
+
+    BankAccount* account = accounts[choice-1];
 
     do
     {
@@ -28,24 +35,25 @@ void run_menu(BankAccount &account)
     
 }
 
-void handle_menu_option(int option, BankAccount &account)
+void handle_menu_option(int option, BankAccount *account)
 {
     auto amount = 0;
+
     switch(option)
     {
     case 1:
         cout<<"Enter deposit amount: ";
         cin>>amount;
-        account.deposit(amount);
+        account->deposit(amount);
         break;
     case 2:
         cout<<"Enter withdraw amount: ";
         cin>>amount;
-        account.withdraw(amount);
+        account->withdraw(amount);
         break;
     case 3:
         cout<<"Balance: ";
-        cout<<account.get_balance()<<"\n";
+        cout<<*account->get_balance()<<"\n";
         break;
     case 4:
         cout<<"Exiting ...\n";

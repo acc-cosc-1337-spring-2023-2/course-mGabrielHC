@@ -22,10 +22,15 @@ void BankAccount::withdraw(int amount)
     }
 }
 
-//Free function; NOT {ART OF THE CLASS!!!
-void show_balance(BankAccount &account)
+//FREE FUNCTIONS; NOT A CLASS FUNCTION
+void show_balance(const BankAccount &account)
 {
-    std::cout<<"Friends balance: "<<account.balance<<"\n";
+    std::cout<<"Friend function: "<<account.balance<<"\n";
 }
 
-std::ostream& operator<<(std::ostream& out, const BankAccount)
+std::ostream& operator<<(std::ostream& out, const BankAccount &account)
+{   
+    out<<"Operator overload: "<<account.balance<<"\n";    
+
+    return out;
+}
