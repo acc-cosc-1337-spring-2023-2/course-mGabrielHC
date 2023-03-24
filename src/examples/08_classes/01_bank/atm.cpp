@@ -1,29 +1,26 @@
 //atm.cpp
 #include "atm.h"
-#include "bank_account.h"
 
-using std::cout;
-using std::cin;
+using std::cin; using std::cout;
 
 void display_menu()
 {
-    cout<<"\n\nAcc COSC Bank\n\n";
-    cout<<"1-deposit\n";
-    cout<<"2-withdraw\n";
-    cout<<"3-balance\n";
+    cout<<"\n\nACC COSC Bank\n\n";
+    cout<<"1-Deposit\n";
+    cout<<"2-Withdraw\n";
+    cout<<"3-Display Balance\n";
     cout<<"4-Exit\n";
 }
 
-void run_menu(std::vector<BankAccount*> account)
+void run_menu(std::vector<std::unique_ptr<BankAccount>> &accounts)
 {
     auto option = 0;
-
     auto choice = 0;
 
-    cout<<"Checking(1) or savings(2) ";
+    cout<<"Checking(1) or savings(2)?";
     cin>>choice;
 
-    BankAccount* account = accounts[choice-1];
+    std::unique_ptr<BankAccount> &account = accounts[choice - 1];
 
     do
     {
@@ -31,15 +28,15 @@ void run_menu(std::vector<BankAccount*> account)
         cout<<"Enter menu option: ";
         cin>>option;
         handle_menu_option(option, account);
-    } while (option !=4);
-    
+    }
+    while(option != 4);
 }
 
-void handle_menu_option(int option, BankAccount *account)
+void handle_menu_option(int option, std::unique_ptr<BankAccount> &account)
 {
     auto amount = 0;
 
-    switch(option)
+    switch (option)
     {
     case 1:
         cout<<"Enter deposit amount: ";
@@ -53,14 +50,13 @@ void handle_menu_option(int option, BankAccount *account)
         break;
     case 3:
         cout<<"Balance: ";
-        cout<<*account->get_balance()<<"\n";
+        cout<<account->get_balance();
         break;
     case 4:
-        cout<<"Exiting ...\n";
+        cout<<"Exiting...\n";
         break;
     default:
-        cout<<"Invalid option ...";
+        cout<<"Invalid Option...";
         break;
-    
     }
 }

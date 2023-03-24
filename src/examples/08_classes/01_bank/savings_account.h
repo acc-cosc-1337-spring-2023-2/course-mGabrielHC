@@ -1,10 +1,15 @@
 //savings_account.h
 #include "bank_account.h"
 
-#ifdef SAVINGs_ACCOUNT.H
-#define BANK_ACCOUNT.H
+#ifndef SAVINGS_ACCOUNT_H
+#define SAVINGS_ACCOUNT_H
 
-class SavingsAccount : public BankAccount
+class SavingsAccount: public BankAccount
 {
-    
-}
+public:
+    SavingsAccount(){}
+    SavingsAccount(int b) : BankAccount(b){}
+    int get_balance()const override{return BankAccount::get_balance() + BankAccount::get_balance() * .05;}
+};
+
+#endif

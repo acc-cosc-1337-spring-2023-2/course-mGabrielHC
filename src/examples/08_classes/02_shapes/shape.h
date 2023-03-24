@@ -1,1 +1,5 @@
 //shape.h
+class shape
+{
+    
+}
