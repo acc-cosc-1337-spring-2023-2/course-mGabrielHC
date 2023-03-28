@@ -7,8 +7,9 @@
 class CheckingAccount : public BankAccount
 {
 public:
-    CheckingAccount(){}
+    CheckingAccount(){}//default constructor
     CheckingAccount(int b) : BankAccount(b){}
+    int get_balance() const {return BankAccount::get_balance();}
 };
 
 #endif
