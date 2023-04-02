@@ -12,6 +12,8 @@ int main()
 {
 	string continue_game = " ";
 	string first_player = " ";
+	string winner = " ";
+
 	do
 	{
 		
@@ -36,11 +38,18 @@ int main()
 			cout<<"Enter a position from 1 to 9: ";
 			cin>>position;
 
+			while(position < 1 || position > 9)
+			{
+				cout<<"Please enter a number from 1 to 9: "<<"\n";
+				cin>>position;
+			}
+
 			game.get_player();
 			game.mark_board(position);
 			game.display_board();
 		}
 
+		cout<<"The winner is player: "<<game.get_winner()<<"\n";
 		cout<<"continue?(Y/N): ";
 		cin>>continue_game;
 
