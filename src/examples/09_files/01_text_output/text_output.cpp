@@ -1,48 +1,46 @@
 #include "text_output.h"
 
-using std::ofstream;
-using std::cout;
-using std::ifstream;
-using std::string;
+using std::cout;        using std::string;
+using std::ofstream;    using std::ifstream;
 using std::getline;
 
+void output_to_file()
+{   
+    cout<<"Create file object/variable\n";
+    ofstream myfile;//represents a file
 
-void output_data_to_file()
-{
-    cout<<"Create file object\n";
-    ofstream myFile;
-    cout<<"Open the file\n";
-    myFile.open("example.dat");
+    cout<<"open file for writing\n";
+    myfile.open("example.dat");//open in text mode
 
-    cout<<"write to file\n";
-    myFile<<"Write line to file\n";
-    myFile<<"Write another line to file\n";
-    myFile<<"Write another line to file\n";
+    cout<<"write to file...\n";
+    myfile<<"Write a line to file\n";
+    myfile<<"Write another line to file\n";
+    myfile<<"Write another line to file\n";
 
-    cout<<"Close the file\n";
-    myFile.close();
+    cout<<"Close the file\n\n";
+    myfile.close();
 }
 
-void read_data_from_file()
+void read_from_file()
 {
-    cout<<"\nCreate file eobject";
-    string line;
-    ifstream myFile;
-    myFile.open("example.dat");
+    string line;//represents a line from a file
+    cout<<"Create file object\n";
+    ifstream infile("example.dat");
 
-    if(myFile.is_open())
+    cout<<"try to open the file\n";
+    if(infile.is_open())
     {
-        while(getline(myFile, line))
+        cout<<"Read from file\n";
+        while(getline(infile, line))
         {
             cout<<line<<"\n";
         }
-
-        cout<<"Close the file\n";
-        myFile.close();
+        cout<<"Close the file object\n";
+        infile.close();
     }
-
     else
     {
-        cout<<"Unable to open the file\n";
+        cout<<"Cannot open the file...\n";
     }
+    
 }
