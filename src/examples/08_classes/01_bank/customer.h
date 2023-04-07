@@ -1,4 +1,5 @@
 //customer.h
+#include "bank_account.h"
 #include "checking_account.h"
 #include "savings_account.h"
 #include<memory>
@@ -9,10 +10,14 @@
 
 class Customer
 {
-    public:
-        Customer();
-        std::unique_ptr<BankAccount>& get_account(int index){return accounts[index];}
+public:
+    Customer();
+    Customer(int checking_balance, int savings_balance);
+    std::unique_ptr<BankAccount>& get_account(int index){return accounts[index];}
 
-    private:
-        std::vector<std::unique_ptr<BankAccount>> accounts;
+private:
+    std::vector<std::unique_ptr<BankAccount>> accounts;
 };
+
+
+#endif
