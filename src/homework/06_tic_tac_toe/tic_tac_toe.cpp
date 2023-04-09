@@ -6,6 +6,37 @@
 
 using std::cout;
 using std::string;
+using std::ofstream;
+using std::istream;
+
+//friend
+
+ostream& operator<<(ostream& out, const TicTacToe& game)
+    {
+        out<<game.pegs[0]<<"|"<<game.pegs[1]<<"|"<<game.pegs[2]<<"\n";
+        out<<game.pegs[3]<<"|"<<game.pegs[4]<<"|"<<game.pegs[5]<<"\n";
+        out<<game.pegs[6]<<"|"<<game.pegs[7]<<"|"<<game.pegs[8]<<"\n";
+        
+        return out;
+    }
+
+istream& operator>>(istream& in, TicTacToe& game)
+{
+    int position = 0;
+	cout<<"Enter a position from 1 to 9: ";
+	in>>position;
+
+    while(position < 1 || position > 9)
+		{
+			cout<<"Please enter a number from 1 to 9: "<<"\n";
+			in>>position;
+		}
+
+    game.get_player();
+	game.mark_board(position);
+
+    return in;
+}
 
 //public
 bool TicTacToe::game_over()
@@ -47,14 +78,6 @@ void TicTacToe::mark_board(int position)
     }
 }
 
-void TicTacToe::display_board() const
-{
-
- std::cout<<pegs[0]<<"|"<<pegs[1]<<"|"<<pegs[2]<<"\n";
- std::cout<<pegs[3]<<"|"<<pegs[4]<<"|"<<pegs[5]<<"\n";
- std::cout<<pegs[6]<<"|"<<pegs[7]<<"|"<<pegs[8]<<"\n";
-
-}
 //private
 
 bool TicTacToe::check_column_win()

@@ -2,6 +2,7 @@
 #include<string>
 #include<vector>
 #include "tic_tac_toe.h"
+#include "tic_tac_toe_manager.h"
 
 using std::cout;
 using std::cin;
@@ -13,6 +14,11 @@ int main()
 	string continue_game = " ";
 	string first_player = " ";
 	string winner = " ";
+	int o = 0;
+	int w = 0;
+	int t = 0;
+
+	TicTacToeManager manager;
 
 	do
 	{
@@ -34,26 +40,26 @@ int main()
 
 		while(game.game_over() == false)
 		{
-			int position = 0;
-			cout<<"Enter a position from 1 to 9: ";
-			cin>>position;
-
-			while(position < 1 || position > 9)
-			{
-				cout<<"Please enter a number from 1 to 9: "<<"\n";
-				cin>>position;
-			}
-
-			game.get_player();
-			game.mark_board(position);
-			game.display_board();
+			cin>>game;
+			cout<<game<<"\n";
 		}
 
 		cout<<"The winner is player: "<<game.get_winner()<<"\n";
+
+		manager.save_game(game);
+		manager.get_winner_total(o, w, t);
+
+		cout<<"Player X wins: "<<w<<"\n";
+		cout<<"Player O wins: "<<o<<"\n";
+		cout<<"Tie game: "<<t<<"\n";
+
 		cout<<"continue?(Y/N): ";
 		cin>>continue_game;
 
 	} while (continue_game == "Y" || continue_game == "y");
+
+	cout<<"\nGames played: \n";
+	cout<<manager;
 
 	return 0;
 }
