@@ -34,7 +34,7 @@ int main()
 		}
 		
 
-		TicTacToe game;
+		TicTacToe game(size);
 
 		game.start_game(first_player);
 
