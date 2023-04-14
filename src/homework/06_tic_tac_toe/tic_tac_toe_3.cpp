@@ -3,7 +3,7 @@
 
 
 //private
-bool TicTacToe::check_column_win()
+bool TicTacToe3::check_column_win()
 {
     if(pegs[0] == player && pegs[3] == player && pegs[6] == player) 
     {
@@ -24,7 +24,7 @@ bool TicTacToe::check_column_win()
     return false;
 }
 
-bool TicTacToe::check_row_win()
+bool TicTacToe3::check_row_win()
 {
     if(pegs[0] == player && pegs[1] == player && pegs[2] == player) 
     {
@@ -45,7 +45,7 @@ bool TicTacToe::check_row_win()
     return false;
 }
 
-bool TicTacToe::check_diagonal_win()
+bool TicTacToe3::check_diagonal_win()
 {
     if(pegs[0] == player && pegs[4] == player && pegs[8] == player) 
     {

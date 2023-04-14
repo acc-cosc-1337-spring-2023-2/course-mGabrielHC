@@ -8,20 +8,19 @@
 using std::ostream;
 using std::istream;
 using std::string;
-using std::vector;
 
 //public
-void TicTacToeManager::save_game(TicTacToe b)
+void TicTacToeManager::save_game(unique_ptr<TicTacToe>& b)
 {
-    games.push_back(b);
-    update_winner_count(b.get_winner());
+    update_winner_count(b->get_winner());
+    games.push_back(move(b));
 }
 
 ostream& operator<<(std::ostream & out, const TicTacToeManager & manager)
 {
     for(const auto& game : manager.games)
     {
-        out << game << "\n";
+        out << *game << "\n";
     }
 
     return out;

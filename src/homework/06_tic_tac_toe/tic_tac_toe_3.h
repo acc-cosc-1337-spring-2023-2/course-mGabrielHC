@@ -6,7 +6,8 @@
 
 class TicTacToe3 : public TicTacToe
 {
-    TicTacToe3() : TicTacToe(3){};
+    public:
+        TicTacToe3() : TicTacToe(3){};
     
     private:
         bool check_column_win();

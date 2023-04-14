@@ -2,8 +2,10 @@
 #include<iostream>
 #include<string>
 #include<vector>
+#include<memory>
 #include "tic_tac_toe.h"
 
+using std::unique_ptr;
 using std::ostream;
 using std::istream;
 using std::string;
@@ -15,11 +17,11 @@ using std::vector;
 class TicTacToeManager
 {
 public:
-    void save_game(TicTacToe b);
+    void save_game(unique_ptr<TicTacToe>& b);
     friend ostream& operator<<(std::ostream & out, const TicTacToeManager & manager);
     void get_winner_total(int& o, int& w, int& t);
 private:
-    vector<TicTacToe> games;
+    vector<unique_ptr<TicTacToe>> games;
     int x_win = 0;
     int o_win = 0;
     int ties = 0;

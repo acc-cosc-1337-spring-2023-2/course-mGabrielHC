@@ -2,6 +2,8 @@
 #include<string>
 #include<vector>
 #include "tic_tac_toe.h"
+#include "tic_tac_toe_3.h"
+#include "tic_tac_toe_4.h"
 #include "tic_tac_toe_manager.h"
 
 using std::cout;
@@ -34,7 +36,7 @@ int main()
 		}
 		
 
-		TicTacToe game(size);
+		TicTacToe game(3);
 
 		game.start_game(first_player);
 
