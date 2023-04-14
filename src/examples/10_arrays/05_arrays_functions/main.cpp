@@ -5,16 +5,11 @@ using std::cout;
 
 int main() 
 {
-	//dangling pointer
-	int* num = new int(5);
-	//another pointer points to data
-	//lots of code here
-	int* num2 = num;
-	//some other region of code; data is deleted
-	delete num;
-
-	//try to reuse the deleted memory(data)
-	cout<<*num2<<"\n";
+	//use_dynamic_memory_array(3);
+	//limit_dynamic_memory_scope(3);
+	cout<<"load to stack\n";
+	use_dynamic_array(3);
+	cout<<"unload from the stack\n";
 
 
 	return 0;
