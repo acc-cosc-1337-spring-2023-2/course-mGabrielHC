@@ -3,25 +3,37 @@
 //private
 bool TicTacToe4::check_column_win()
 {
-    if(pegs[0] == player && pegs[4] == player && pegs[8] == player && pegs[12] == player) 
+    if(pegs[0] == "X" && pegs[4] == "X" && pegs[8] == "X" && pegs[12] == "X") 
     {
-        set_winner();
         return true;
     }
-    else if(pegs[1] == player && pegs[5] == player && pegs[9] == player && pegs[13] == player)
+    else if(pegs[1] == "X" && pegs[5] == "X" && pegs[9] == "X" && pegs[13] == "X")
     {
-        set_winner();
         return true;
     }
 
-    else if(pegs[2] == player && pegs[6] == player && pegs[10] == player && pegs[14] == player)
+    else if(pegs[2] == "X" && pegs[6] == "X" && pegs[10] == "X" && pegs[14] == "X")
     {
-        set_winner();
         return true;
     }
-    else if(pegs[3] == player && pegs[7] == player && pegs[11] == player && pegs[15] == player)
+    else if(pegs[3] == "X" && pegs[7] == "X" && pegs[11] == "X" && pegs[15] == "X")
     {
-        set_winner();
+        return true;
+    }
+    else if(pegs[0] == "O" && pegs[4] == "O" && pegs[8] == "O" && pegs[12] == "O") 
+    {
+        return true;
+    }
+    else if(pegs[1] == "O" && pegs[5] == "O" && pegs[9] == "O" && pegs[13] == "O")
+    {
+        return true;
+    }
+    else if(pegs[2] == "O" && pegs[6] == "O" && pegs[10] == "O" && pegs[14] == "O")
+    {
+        return true;
+    }
+    else if(pegs[3] == "O" && pegs[7] == "O" && pegs[11] == "O" && pegs[15] == "O")
+    {
         return true;
     }
 
@@ -30,25 +42,37 @@ bool TicTacToe4::check_column_win()
 
 bool TicTacToe4::check_row_win()
 {
-    if(pegs[0] == player && pegs[1] == player && pegs[2] == player && pegs[3] == player) 
+    if(pegs[0] == "X" && pegs[1] == "X" && pegs[2] == "X" && pegs[3] == "X") 
     {
-        set_winner();
         return true;
     }
-    else if(pegs[4] == player && pegs[5] == player && pegs[6] == player && pegs[7] == player)
+    else if(pegs[4] == "X" && pegs[5] == "X" && pegs[6] == "X" && pegs[7] == "X")
     {
-        set_winner();
+        return true;
+    }
+    else if(pegs[8] == "X" && pegs[9] == "X" && pegs[10] == "X" && pegs[11] == "X")
+    {
+        return true;
+    }
+    else if(pegs[12] == "X" && pegs[13] == "X" && pegs[14] == "X" && pegs[15] == "X")
+    {
+        return true;
+    }
+    else if(pegs[0] == "O" && pegs[1] == "O" && pegs[2] == "O" && pegs[3] == "O") 
+    {
+        return true;
+    }
+    else if(pegs[4] == "O" && pegs[5] == "O" && pegs[6] == "O" && pegs[7] == "O")
+    {
         return true;
     }
 
-    else if(pegs[8] == player && pegs[9] == player && pegs[10] == player && pegs[11] == player)
+    else if(pegs[8] == "O" && pegs[9] == "O" && pegs[10] == "O" && pegs[11] == "O")
     {
-        set_winner();
         return true;
     }
-    else if(pegs[12] == player && pegs[13] == player && pegs[14] == player && pegs[15] == player)
+    else if(pegs[12] == "O" && pegs[13] == "O" && pegs[14] == "O" && pegs[15] == "O")
     {
-        set_winner();
         return true;
     }
 
@@ -57,33 +81,23 @@ bool TicTacToe4::check_row_win()
 
 bool TicTacToe4::check_diagonal_win()
 {
-    if(pegs[0] == player && pegs[5] == player && pegs[10] == player && pegs[15] == player) 
+    if(pegs[0] == "X" && pegs[5] == "X" && pegs[10] == "X" && pegs[15] == "X") 
     {
-        set_winner();
         return true;
     }
-    else if(pegs[3] == player && pegs[6] == player && pegs[9] == player && pegs[12] == player)
+    else if(pegs[3] == "X" && pegs[6] == "X" && pegs[9] == "X" && pegs[12] == "X")
     {
-        set_winner();
+        return true;
+    }
+    else if(pegs[0] == "O" && pegs[5] == "O" && pegs[10] == "O" && pegs[15] == "O") 
+    {
+        return true;
+    }
+    else if(pegs[3] == "O" && pegs[6] == "O" && pegs[9] == "O" && pegs[12] == "O")
+    {
         return true;
     }
     
     return false;
 }
 
-/*
-bool board_full = true;
-    for(int i = 0; i < 16; i++)
-    {
-        if(pegs[i] == " ")
-        {
-            board_full = false;
-            break;
-        }
-    }
-    if(board_full)
-    {
-        winner = "C";
-        return true;
-    }
-*/

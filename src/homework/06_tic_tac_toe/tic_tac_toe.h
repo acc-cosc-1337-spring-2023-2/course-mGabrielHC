@@ -24,16 +24,16 @@ class TicTacToe
         void start_game(std::string first_player);
         void mark_board(int position);
         string get_player() const{return player;}
-        string get_winner(){return winner;}
-        void set_winner();
-        string winner;
-        std::string player;
+        string get_winner() const{return winner;}
 
     private:
+        void set_winner();
         void set_next_player();
         bool check_board_full();
         void clear_board();
         //Class privaye data
+        string winner;
+        std::string player;
     protected:
         std::vector<std::string> pegs;
         virtual bool check_column_win();
@@ -42,3 +42,16 @@ class TicTacToe
 };
 
 #endif
+
+
+
+
+
+
+
+
+
+
+
+
+

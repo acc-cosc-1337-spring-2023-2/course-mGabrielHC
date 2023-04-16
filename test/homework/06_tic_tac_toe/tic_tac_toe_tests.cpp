@@ -12,7 +12,7 @@ using std::make_unique;
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
-/*
+
 TEST_CASE("verify TicTacToe manager get winner total function")
 {
 	TicTacToeManager manager;
@@ -311,9 +311,6 @@ TEST_CASE("Verify Game over if 9 slots full")
 	REQUIRE((game->get_winner() == "X" || game->get_winner() == "O" || game->get_winner() == "C"));
 }
 
-*/
-
-/*
 TEST_CASE("verify TicTacToe manager get winner total function 4x4 board")
 {
 	TicTacToeManager manager;
@@ -383,7 +380,7 @@ TEST_CASE("verify TicTacToe manager get winner total function 4x4 board")
 	REQUIRE(o_win == 1);
 	REQUIRE(ties == 1);
 }
-*/
+
 //--------------------------------------------------------------------------------------------------------------------
 
 TEST_CASE(" Verify player set to X 4x4 board")
@@ -583,7 +580,7 @@ TEST_CASE("verify Test win by second row 4")
 	REQUIRE((game->get_winner() == "X" || game->get_winner() == "O"));
 }
 
-TEST_CASE("verify Test win by third row")
+TEST_CASE("verify Test win by third row4")
 {
 	unique_ptr<TicTacToe> game = make_unique<TicTacToe4>();
 
@@ -674,7 +671,7 @@ TEST_CASE("Verify Test win diagonally from top left 4")
 	REQUIRE((game->get_winner() == "X" || game->get_winner() == "O"));
 }
 
-TEST_CASE("Verify Test win diagonally from bottom left ")
+TEST_CASE("Verify Test win diagonally from bottom left 4")
 {
 	unique_ptr<TicTacToe> game = make_unique<TicTacToe4>();
 

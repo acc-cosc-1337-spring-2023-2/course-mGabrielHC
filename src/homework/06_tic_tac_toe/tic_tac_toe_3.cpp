@@ -5,41 +5,62 @@
 //private
 bool TicTacToe3::check_column_win()
 {
-    if(pegs[0] == player && pegs[3] == player && pegs[6] == player) 
+    if(pegs[0] == "X" && pegs[3] == "X" && pegs[6] == "X") 
     {
-        set_winner();
         return true;
     }
-    else if(pegs[1] == player && pegs[4] == player && pegs[7] == player)
+    else if(pegs[1] == "X" && pegs[4] == "X" && pegs[7] == "X")
     {
-        set_winner();
         return true;
     }
 
-    else if(pegs[2] == player && pegs[5] == player && pegs[8] == player)
+    else if(pegs[2] == "X" && pegs[5] == "X" && pegs[8] == "X")
     {
-        set_winner();
         return true;
     }
+    else if(pegs[0] == "O" && pegs[3] == "O" && pegs[6] == "O") 
+    {
+        return true;
+    }
+    else if(pegs[1] == "O" && pegs[4] == "O" && pegs[7] == "O")
+    {
+        return true;
+    }
+
+    else if(pegs[2] == "O" && pegs[5] == "O" && pegs[8] == "O")
+    {
+        return true;
+    }
+
     return false;
 }
 
 bool TicTacToe3::check_row_win()
 {
-    if(pegs[0] == player && pegs[1] == player && pegs[2] == player) 
+    if(pegs[0] == "X" && pegs[1] == "X" && pegs[2] == "X") 
     {
-        set_winner();
         return true;
     }
-    else if(pegs[3] == player && pegs[4] == player && pegs[5] == player)
+    else if(pegs[3] == "X" && pegs[4] == "X" && pegs[5] == "X")
     {
-        set_winner();
         return true;
     }
 
-    else if(pegs[6] == player && pegs[7] == player && pegs[8] == player)
+    else if(pegs[6] == "X" && pegs[7] == "X" && pegs[8] == "X")
     {
-        set_winner();
+        return true;
+    }
+    else if(pegs[0] == "O" && pegs[1] == "O" && pegs[2] == "O") 
+    {
+        return true;
+    }
+    else if(pegs[3] == "O" && pegs[4] == "O" && pegs[5] == "O")
+    {
+        return true;
+    }
+
+    else if(pegs[6] == "O" && pegs[7] == "O" && pegs[8] == "O")
+    {
         return true;
     }
     return false;
@@ -47,14 +68,20 @@ bool TicTacToe3::check_row_win()
 
 bool TicTacToe3::check_diagonal_win()
 {
-    if(pegs[0] == player && pegs[4] == player && pegs[8] == player) 
+    if(pegs[0] == "X" && pegs[4] == "X" && pegs[8] == "X") 
     {
-        set_winner();
         return true;
     }
-    else if(pegs[2] == player && pegs[4] == player && pegs[6] == player)
+    else if(pegs[2] == "X" && pegs[4] == "X" && pegs[6] == "X")
     {
-        set_winner();
+        return true;
+    }
+    else if(pegs[0] == "O" && pegs[4] == "O" && pegs[8] == "O") 
+    {
+        return true;
+    }
+    else if(pegs[2] == "O" && pegs[4] == "O" && pegs[6] == "O")
+    {
         return true;
     }
 

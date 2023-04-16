@@ -1,6 +1,7 @@
 #include<iostream>
 #include<string>
 #include<vector>
+#include<memory>
 #include "tic_tac_toe.h"
 #include "tic_tac_toe_3.h"
 #include "tic_tac_toe_4.h"
@@ -10,12 +11,16 @@ using std::cout;
 using std::cin;
 using std::string;
 using std::vector;
+using std::unique_ptr;
+using std::make_unique;
 
 int main() 
 {
 	string continue_game = " ";
 	string first_player = " ";
 	string winner = " ";
+	string game_type = " ";
+
 	int o = 0;
 	int w = 0;
 	int t = 0;
@@ -36,17 +41,33 @@ int main()
 		}
 		
 
-		TicTacToe game(3);
+		unique_ptr<TicTacToe> game;
 
-		game.start_game(first_player);
-
-		while(game.game_over() == false)
+		while(game_type != "3" && game_type != "4")
 		{
-			cin>>game;
-			cout<<game<<"\n";
+			cout<<"Choose between a 3 to win board or a 4 to win board of TicTacToe"<<"\n";
+			cout<<"For a 3x3 board enter 3, for a 4x4 board, enter 4: ";
+			cin>>game_type;
 		}
 
-		cout<<"The winner is player: "<<game.get_winner()<<"\n";
+		if(game_type == "3")
+		{
+			game = make_unique<TicTacToe3>();
+		}
+		else if (game_type == "4")
+		{
+			game = make_unique<TicTacToe4>();
+		}
+
+		game->start_game(first_player);
+
+		while(game->game_over() == false)
+		{
+			cin>>*game;
+			cout<<*game<<"\n";
+		}
+
+		cout<<"The winner is player: "<<game->get_winner()<<"\n";
 
 		manager.save_game(game);
 		manager.get_winner_total(o, w, t);

@@ -36,12 +36,12 @@ ostream& operator<<(ostream& out, const TicTacToe& game)
 istream& operator>>(istream& in, TicTacToe& game)
 {
     int position = 0;
-	cout<<"Please enter a number from 1 to "<<game.pegs.size()<<":"<<"\n";
+	cout<<"Please enter a number from 1 to "<<game.pegs.size()<<": ";
 	in>>position;
 
     while(position < 1 || position > game.pegs.size())
 		{
-			cout<<"Please enter a number from 1 to"<<game.pegs.size()<<":"<<"\n";
+			cout<<"Please enter a number from 1 to"<<game.pegs.size()<<": ";
 			in>>position;
 		}
 
@@ -84,11 +84,7 @@ void TicTacToe::start_game(string first_player)
 void TicTacToe::mark_board(int position)
 {
     pegs[position - 1] = player;
-
-    if(!game_over())
-    {
-        set_next_player();
-    }
+    set_next_player();
 }
 
 //private
@@ -110,7 +106,14 @@ bool TicTacToe::check_diagonal_win()
 
 void TicTacToe::set_winner()
 {
-    winner = player;
+    if(player == "X")
+    {
+        winner = "O";
+    }
+    else
+    {
+        winner = "X";
+    }
 }
 
 void TicTacToe::set_next_player()
