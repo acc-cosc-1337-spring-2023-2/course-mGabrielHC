@@ -1,7 +1,12 @@
+#include "int.h"
+
 #include<iostream>
+
+
+using std::cout;
 
 int main()
 {
-    std::cout<<"Hello World!";
+    cout<<"Hello World!";
     return 0;
 }
