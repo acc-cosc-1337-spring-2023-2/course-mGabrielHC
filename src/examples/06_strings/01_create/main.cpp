@@ -2,7 +2,7 @@
 #include<string>
 
 using std::cout; using std::string;
-
+/*
 int main()
 {
     string lang = "C++";
@@ -27,7 +27,7 @@ int main()
     cout<<"size: "<<lang.size()<<"\n";
     cout<<"Capacity: " <<lang.capacity()<<"\n\n";
 
-    /*create string
+    create string
     string s0("Initial string");
     cout<<s0<<"\n";
 
@@ -48,7 +48,8 @@ int main()
 
     string s7("12345abc**(**)**");
     cout<<s7<<"\n";
-    */
+    
 
     return 0;
 }
+*/

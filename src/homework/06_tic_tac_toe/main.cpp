@@ -6,6 +6,7 @@
 #include "tic_tac_toe_3.h"
 #include "tic_tac_toe_4.h"
 #include "tic_tac_toe_manager.h"
+#include "tic_tac_toe_data.h"
 
 using std::cout;
 using std::cin;
@@ -25,7 +26,8 @@ int main()
 	int w = 0;
 	int t = 0;
 
-	TicTacToeManager manager;
+	TicTacToeData data;
+	TicTacToeManager manager(data);
 
 	do
 	{
